@@ -1,12 +1,34 @@
 const express =  require("express")
 const dotenv = require("dotenv")
-dotenv.config();
+const connect = require("./db/db")
+const cors = require('cors')
+const cookie_parser = require('cookie-parser')
+const authRoutes = require('./routes/auth.route')
 
+
+dotenv.config();
 const app = express()
 
+app.use(express.json())
+app.use(cors({
+    origin: "*",
+}))
+app.use(cookie_parser())
+app.use(express.urlencoded({extended : true }))
 
+/**
+ * @desc /hello' Test endpoint
+ * @param  - None
+ * @method - GET
+ */
+app.get('/hello', (req, res) => {
+    res.send("Hello from server");
+});
+
+app.use('/api/v1/auth' , authRoutes )
 
 app.listen(process.env.PORT , () =>{
     console.log(" Server is listening at , " , process.env.PORT )
+    connect();
 })
 
