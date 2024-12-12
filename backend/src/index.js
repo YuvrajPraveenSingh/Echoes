@@ -16,14 +16,6 @@ app.use(cors({
 app.use(cookie_parser())
 app.use(express.urlencoded({extended : true }))
 
-/**
- * @desc /hello' Test endpoint
- * @param  - None
- * @method - GET
- */
-app.get('/hello', (req, res) => {
-    res.send("Hello from server");
-});
 
 app.use('/api/v1/auth' , authRoutes )
 

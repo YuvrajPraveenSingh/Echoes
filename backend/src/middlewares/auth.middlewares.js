@@ -1,7 +1,6 @@
 const User = require('../models/user.model')
 const BlackListedToken  = require('../models/blackListedToken.model')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
 
 module.exports.authUser = async (req , res , next) =>{
     const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
@@ -15,6 +14,6 @@ module.exports.authUser = async (req , res , next) =>{
         req.user = user;
         return next()
     } catch (error) {
-        res.status(401).json({message : " unauthorized  Acess"})
+        res.status(401).json({message : " unauthorized  Access"})
     }
 }

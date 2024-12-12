@@ -4,7 +4,7 @@ const { body } = require("express-validator")
 const { Resgister, Login, Logout, Profile } = require('../contollers/auth.contoller')
 
 /**
- * @route POST /signup
+ * @route POST api/v1/auth/signup
  * @desc Register a new user
  * @access Public
  */
@@ -15,7 +15,15 @@ authRoutes.post('/signup',  [
     body('password').isLength({ min: 8 }).withMessage('Password is too short'),
 ], Resgister)
 
-authRoutes.post('/login', Login)
+/**
+ * @route POST api/v1/auth/login
+ * @desc login user
+ * @access Public
+ */ 
+authRoutes.post('/login',[
+    body('email').isEmail().withMessage('Invalid credentials'),
+    body("password").isLength({min :8}).withMessage('Invalid credentials')
+] ,  Login)
 authRoutes.get('/logout', Logout)
 authRoutes.get('/me', Profile)
 

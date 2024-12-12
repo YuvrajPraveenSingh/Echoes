@@ -38,7 +38,8 @@
 -`Response `
 ```json 
 {
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzVhZWM5ZDI4M2ViMmNjYTQ1NDA4YzEiLCJpYXQiOjE3MzQwMTIwNjEsImV4cCI6MTczNDAxNTY2MX0.Cn-sDAHLboKlBXNzjNmtSlzxxtTSphDI6pFYo2-2Snk"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzViMDBjZjU4YjQwZTY1NGI1MDNmNzYiLCJpYXQiOjE3MzQwMTcyMzEsImV4cCI6MTczNDAyMDgzMX0.J6HepoTs2FRv4kKjoUiTTL_ms3t3_FNniOmN2u460xQ",
+    "message": "user created successfuly"
 }
 
 ```
